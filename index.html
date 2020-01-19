@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+   <title>Quiz 0: Status Quo</title>
+   <meta charset="utf-8">
+   <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+
+<body>
+   <h1>A-Frame Challenge</h1>
+   <h3>Describe the scene that you think will be rendered from this code. Specify the color of entities and how they are
+      positioned relative to the camera and to each other.</h3>
+   <p class="answer">There will be a red sphere, a blue box, a yellow cylinder and a teal plane according to the code.
+   </p>
+   <p class="answer">The blue box(-1, 0.5, -3)) should be the closest object to the camera, the yellow cylinder(1, 0.75,
+      -3) is behind
+      the box and placed on the left side while the red sphere(1, 0.75, -3) on the right side. Also, the plane(0, 0, -4)
+      is farther away from the camera.</p><br>
+   <h3>Now view the scene in a browser. The A-Frame code above actually contains three mistakes. Find them and correct
+      them.</h3>
+   <ul class="answer">
+      <li>
+         <p>The tag "a-entity box" should be "a-box" for a box</p>
+      </li>
+      <li>
+         <p>To apply color to the box, the "color" attribute should be used instead of "material"</p>
+      </li>
+      <li>
+         <p>&lt;/a-cylinder&gt; is missing</p>
+      </li>
+   </ul class="answer">
+   <p class="answer">The correct code is shown below:</p class="answer">
+   <xmp>
+      <a-scene background="white">
+         <a-sphere position="0 1.25 -5" radius="1.25" color="red" shadow></a-sphere>
+         <a-box position="-1 0.5 -3" rotation="0 45 0" width="1" height="1" depth="1" color="blue" shadow>
+            </a-entity>
+            <a-cylinder position="1 0.75 -3" radius="0.5" height="1.5" color="yellow" shadow></a-cylinder>
+            <a-plane position="0 0 -4" rotation="-90 0 0" width="4" height="4" color="teal" shadow></a-plane>
+            <a-sky color="silver"></a-sky>
+      </a-scene>
+   </xmp><br>
+   <h1>Unity Challenge</h1>
+   <h3>Describe simply how the object will behave as the application runs. If you are not sure, or not very familiar
+      with C#, that’s ok - just guess based on your read of the code.</h3>
+   <p class="answer">I'm not sure about it but the this code might be moving the object along the x-axis for 2 meters,
+      and relocate it.</p><br>
+   <h3>Imagine that we removed the Awake function from this class. If you ran the application with this change, what do
+      you think would happen? Would there be an error, and how would you expect the object to behave?</h3>
+   <p class="answer">while the variables "OriginalPosition" and "TargetPosition" are not defined, I suppose there would
+      be an error and the object would juest stay in the original place.</p><br>
+   <div id="sidebar">
+      <div>
+         <input id="record" type="button"></input>
+         <a href="#" class="links" onclick="location.reload()">Dashboard</a>
+         <a href="#" class="links">Shortcuts</a>
+         <a href="#" class="links">Overview</a>
+         <a href="#" class="links">Events</a>
+         <a href="#" class="links">Profile</a>
+         <a href="#" class="links">Status</a>
+      </div>
+   </div>
+   <div id="toolbar">
+      <input id="fov" type="range" min="1" max="179" value="80"></input>
+      <input id="tool1" type="button" value="Toggle Menu" onclick="sidebarGone()"></input>
+      <div id="toolcontain">
+         <input id="tool2" type="button" value="Dropdown Menu"></input>
+         <div id="dropup">
+            <a class="links" href="#">Action</a>
+            <a class="links" href="#">Another action</a>
+            <a class="links" href="#">Something else here</a>
+         </div>
+      </div>
+   </div>
+</body>
+<footer>
+   <script>
+      var sidebar = document.getElementById("sidebar");
+      var dropup = document.getElementById("dropup");
+      function sidebarGone() {
+         if (sidebar.style.display === "none") { sidebar.style.display = "flex"; }
+         else { sidebar.style.display = "none"; }
+      }
+
+      document.getElementById("tool2").addEventListener("mouseover", mouseOver);
+      document.getElementById("toolcontain").addEventListener("mouseleave", mouseOut);
+
+      function mouseOver() {
+         document.getElementById("dropup").style.display = "block";
+      }
+
+      function mouseOut() {
+         document.getElementById("dropup").style.display = "none";
+      }
+   </script>
+</footer>
+
+</html>

@@ -1,0 +1,67 @@
+div{
+    position: fixed;
+    background: #f8f9fa;
+    border: 1px solid rgba(0,0,0,.125);
+}
+
+body{
+    width: 80%;
+    padding: 10px;
+}
+
+.answer{
+    margin-left: 20px;
+}
+
+#sidebar{
+    right:0px;
+    top: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    width: 150px;
+}
+
+#sidebar div{
+    position: absolute;
+    display: inline-block;
+    width: 100%;
+}
+
+.links{
+    position: relative;
+    display: block;
+    padding: .75rem 1.25rem;
+    margin-bottom: -1px;
+    border: 1px solid rgba(0,0,0,.125);
+}
+
+#toolbar{
+    bottom: 0px;
+    left: 0;
+    right: 0;
+    text-align: center;
+}
+
+#toolbar input{
+    padding: .75rem 1.25rem;
+    border: 1px solid rgba(0,0,0,.125);
+    vertical-align: top;
+}
+
+#toolcontain{
+    display: inline;
+    padding: 0;
+    border: none;
+    vertical-align: top;
+}
+
+#dropup{
+    display: none;
+    position: absolute;
+    bottom: 40px;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    z-index: 1;
+}
